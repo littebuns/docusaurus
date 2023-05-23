@@ -1,5 +1,6 @@
 ---
 label: 在本地 HTML 页面使用 React
+sidebar_position: 1
 ---
 # 在本地 HTML 页面使用 React
 ## 概览

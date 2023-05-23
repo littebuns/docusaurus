@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # JSX
 
 ## 语法规则

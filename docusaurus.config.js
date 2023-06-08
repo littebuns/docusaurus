@@ -78,15 +78,15 @@ const config = {
           },
           {
             type: "docSidebar",
-            sidebarId: "reactSidebar",
+            sidebarId: "javaScriptSidebar",
             position: "left",
-            label: "React",
+            label: "Js",
           },
           {
             type: "docSidebar",
-            sidebarId: "javaScriptSidebar",
+            sidebarId: "jsPackageSidebar",
             position: "left",
-            label: "javaScript",
+            label: "JS-Package",
           },
           {
             type: "docSidebar",

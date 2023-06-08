@@ -1,4 +1,5 @@
 ## bind()
+
 :::info
 bind() 方法主要用于修改函数的 this 指向
 :::
@@ -22,13 +23,12 @@ bind() 会创建一个新的函数实例，并将该函数的 this 指向 bind()
       getColor();
 
       const object = {
-        color: 'blue',
+        color: "blue",
       };
-      //将
-      const newGetColor = getColor.bind(object)
-      newGetColor()
+      //将 getColor 中的 this 指向 object
+      const newGetColor = getColor.bind(object);
+      newGetColor();
     </script>
   </body>
 </html>
-
 ```

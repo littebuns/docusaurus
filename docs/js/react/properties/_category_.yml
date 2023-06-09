@@ -1,0 +1,8 @@
+position: 3
+label: 'React三大属性'
+className: red
+link:
+  type: generated-index
+  title: Tutorial overview
+customProps:
+  description: This description can be used in the swizzled DocCard

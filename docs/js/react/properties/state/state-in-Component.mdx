@@ -1,3 +1,6 @@
+---
+sidebar_label: 在类组件中使用state
+---
 ## state 是什么
 
 :::info
@@ -5,21 +8,6 @@ state 是一个存储和管理组件内部的对象, 是组件的一部分
 当 state 发生变化时，React 会自动重新渲染组件, 以确保界面和数据一致
 :::
 
-```js
-class Weather extends React.Component {
-  constructor() {
-    super();
-    console.log(this);
-  }
-
-  render() {
-    return 1;
-  }
-}
-```
-
-打印下类组件 可以看到组件中的 state 属性
-![](assets/state.png)
 
 ## 完整案例
 
@@ -128,5 +116,44 @@ p1.listen();
 案例中 changeWeather 作为 onClick 的回调    
 并不是实例调用 而是直接调用的  因此需要 bind 来修改changeWeather 中的 this 指向
 
+## 简写
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Weather extends React.Component {
+        state = { isHot: true };
+
+        // 函数表达式加匿名函数会正确的指向组件实例  因为箭头函数不会创建自己的 this 指向 而是直接继承当前上下文的 this 值
+        changeWeather = ()=> {
+          this.setState({ isHot: !this.state.isHot });
+        }
+
+        render() {
+          return (
+            <h1 onClick={this.changeWeather}>
+              今天天气{this.state.isHot ? "炎热" : "凉爽"}
+            </h1>
+          );
+        }
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Weather />);
+    </script>
+  </body>
+</html>
+
+```
 
 

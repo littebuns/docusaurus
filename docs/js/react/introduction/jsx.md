@@ -1,4 +1,5 @@
 ---
+sidebar_label: JSX入门
 sidebar_position: 2
 ---
 # JSX

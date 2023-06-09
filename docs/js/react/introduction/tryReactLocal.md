@@ -1,8 +1,7 @@
 ---
-label: 在本地 HTML 页面使用 React
+sidebar_label: 在本地 HTML 页面使用 React
 sidebar_position: 1
 ---
-# 在本地 HTML 页面使用 React
 ## 概览
 可以在 html 页面直接使用 React
  ```html

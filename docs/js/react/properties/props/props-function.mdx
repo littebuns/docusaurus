@@ -1,16 +1,7 @@
 ---
-sidebar-label: props 类型限制
+sidebar-label: 在函数组件中使用 props
 sidebar-position: 2
 ---
-
-:::info
-开发规范需要对标签参数 props 进行类型限制 需要 prop-types 包
-其实是给组件两个属性
-- propTypes
-- defaultProps
-:::
-
-## 类型和默认值限制
 
 ```html
 <!DOCTYPE html>
@@ -28,19 +19,15 @@ sidebar-position: 2
     <div id="div1"></div>
 
     <script type="text/babel">
-      class Person extends React.Component {
-        render() {
-          return (
-            <ul>
-              <li>name: {this.props.name}</li>
-              <li>age: {this.props.age + 1}</li>
-              <li>sex: {this.props.sex}</li>
-            </ul>
-          );
-        }
-      }
-
-      // 标签属性值限制
+      const Person = ({ name, age, sex }) => {
+        return (
+          <ul>
+            <li>name: {name}</li>
+            <li>age: {age + 1}</li>
+            <li>sex: {sex}</li>
+          </ul>
+        );
+      };
       Person.propTypes = {
         name: PropTypes.string.isRequired,
         age: PropTypes.number,
@@ -49,7 +36,6 @@ sidebar-position: 2
         speak: PropTypes.func,
       };
 
-      // 默认值设置
       Person.defaultProps = {
         sex: "不男不女",
       };
@@ -66,33 +52,5 @@ sidebar-position: 2
     </script>
   </body>
 </html>
-```
 
-可以将 props 限制加在 Person 类中
-
-```js
-class Person extends React.Component {
-
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number,
-    sex: PropTypes.string,
-    // 对方法进行限制
-    speak: PropTypes.func,
-  };
-
-  static defaultProps = {
-    sex: "不男不女",
-  };
-
-  render() {
-    return (
-      <ul>
-        <li>name: {this.props.name}</li>
-        <li>age: {this.props.age + 1}</li>
-        <li>sex: {this.props.sex}</li>
-      </ul>
-    );
-  }
-}
 ```

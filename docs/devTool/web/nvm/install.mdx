@@ -1,0 +1,40 @@
+---
+sidebar_label: 安装教程
+---
+
+:::info
+  nvm全英文也叫node.js version management，是一个nodejs的版本管理工具。nvm和n都是node.js版本管理工具，为了解决node.js各种版本存在不兼容现象可以通过它可以安装和切换不同版本的node.js。
+:::
+
+## github 地址
+https://github.com/nvm-sh/nvm
+
+## 安装步骤
+### 1. 下载 tar 包
+https://github.com/nvm-sh/nvm/archive/refs/tags/v0.39.5.tar.gz
+
+解压
+
+### 2. 编辑 .bashrc 文件
+
+```shell
+export NVM_DIR="nvm解压的位置"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+source ~/.bashrc
+
+
+### 3. 安装需要的node
+nvm install <version> 安装node
+
+
+
+## 常用命令
+- nvm ls  查看nvm中可用的版本
+- nvm ls-remote 查看所有可用的node版本
+- nvm install <version> 安装node
+- nvm use <version> 使用指定的版本
+
+
+

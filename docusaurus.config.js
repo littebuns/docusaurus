@@ -90,9 +90,21 @@ const config = {
           },
           {
             type: "docSidebar",
+            sidebarId: "javaPackageSidebar",
+            position: "left",
+            label: "Java-Package",
+          },
+          {
+            type: "docSidebar",
             sidebarId: "toolSidebar",
             position: "left",
             label: "tool",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "installSidebar",
+            position: "left",
+            label: "install",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {

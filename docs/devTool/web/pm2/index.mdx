@@ -1,0 +1,13 @@
+---
+sidebar-label: 入门
+---
+
+## 安装
+ npm install pm2@latest -g
+
+## 运行
+pm2 serve /data/csv/download/files  3002 --name 'download'
+
+
+
+pm2 start ./tusd --name tusd -- -upload-dir /data1/csv/data
